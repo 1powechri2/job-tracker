@@ -13,7 +13,6 @@ describe 'User updates a job' do
 
     click_on('Update')
 
-    expect(page).to_not have_content("ESPN")
     expect(page).to_not have_content("Developer")
     expect(page).to_not have_content("70")
 
