@@ -12,7 +12,8 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to category_path(@category)
     else
-      render :new
+      flash[:alert] = "Sorry, that category already exists!"
+      redirect_to new_category_path
     end
   end
 
@@ -25,14 +26,14 @@ class CategoriesController < ApplicationController
   end
 
   def update
-      @category = Category.find(params[:id])
-      @category.update(category_params)
-      if @category.save
-        flash[:success] = "#{@category.title} updated!"
-        redirect_to category_path(@category)
-      else
-        render :edit
-      end
+    @category = Category.find(params[:id])
+    @category.update(category_params)
+    if @category.save
+      flash[:success] = "#{@category.title} updated!"
+      redirect_to category_path(@category)
+    else
+      render :edit
+    end
   end
 
   private
@@ -40,5 +41,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:title)
   end
-
 end
