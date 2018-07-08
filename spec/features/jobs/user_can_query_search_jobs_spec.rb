@@ -8,7 +8,7 @@ describe "User sees list of jobs based on query search" do
     job_2 = Job.create!(title: "Teacher", level_of_interest: 10, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
 
     visit '/jobs?sort=location'
-#####STILL TRYING TO FIGURE OUT HOW TO TEST ORDER HERE"
+#####STILL TRYING TO FIGURE OUT HOW TO TEST ORDER HERE"########################
 
     expect(page).to have_content("Teacher at Verizon in Boulder")
     expect(page).to have_content("Developer at ESPN in Denver")

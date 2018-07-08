@@ -10,9 +10,9 @@ describe "User sees every job" do
     job_2 = Job.create!(title: "Teacher", level_of_interest: 10, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
 
     visit '/jobs'
-
-    expect(page).to have_content("Developer at ESPN")
-    expect(page).to have_content("Teacher at Verizon")
+    
+    expect(page).to have_content("Developer at ESPN in Denver")
+    expect(page).to have_content("Teacher at Verizon in Boulder")
   end
 end
 
@@ -30,4 +30,6 @@ describe "User sees all jobs for a company" do
     expect(page).to have_content("Developer")
     expect(page).to have_content("Teacher")
   end
+
+
 end

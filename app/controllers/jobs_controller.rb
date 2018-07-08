@@ -6,7 +6,11 @@ class JobsController < ApplicationController
   end
 
   def all_jobs
-    @jobs = Job.all
+    if params['sort'] == 'location'
+      @jobs = Job.all.order(city: :asc)
+    else
+      @jobs = Job.all
+    end
   end
 
   def new
@@ -56,4 +60,6 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
+
+
 end
