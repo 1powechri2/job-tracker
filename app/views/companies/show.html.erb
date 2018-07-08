@@ -9,5 +9,9 @@
     <h3>0 Jobs Listed</h3>
 <% end %>
 
+<%= render partial: 'contacts/form' %>
+
+<%= render partial: 'companies/contact', collection: @company.contacts.reverse %>
+
 <p><%= link_to "Create A Job", new_company_job_path(@company)%></p>
 <p><%= link_to "See All Companies", companies_path%></p>

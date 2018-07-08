@@ -21,9 +21,9 @@ describe "User sees one company" do
     job = Job.create!(title: "Developer", level_of_interest: 90, city: "Denver", company_id: company.id, category_id: category.id)
 
     visit company_path(company)
-    fill_in 'contact[:name]', with: "Michelle Obama"
-    fill_in 'contact[:title]', with: "First Lady"
-    fill_in 'contact[:email]', with: "Michelle@gmail.com"
+    fill_in 'contact[name]', with: "Michelle Obama"
+    fill_in 'contact[title]', with: "First Lady"
+    fill_in 'contact[email]', with: "Michelle@gmail.com"
     click_on 'Save'
 
     expect(current_path).to eq("/companies/#{company.id}")
