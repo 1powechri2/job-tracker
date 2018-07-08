@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
-  validates_presence_of :name, :title, :email
+class Contact < ApplicationRecord
+  validates :name, :title, :email, presence: true
   belongs_to :company
 end
