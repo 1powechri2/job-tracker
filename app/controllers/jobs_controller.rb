@@ -5,6 +5,10 @@ class JobsController < ApplicationController
     @jobs = @company.jobs
   end
 
+  def all_jobs
+    @jobs = Job.all
+  end
+
   def new
     @company = Company.find(params[:company_id])
     @job = Job.new()
