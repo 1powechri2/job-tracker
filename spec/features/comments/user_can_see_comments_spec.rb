@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User sees all comments for a single job' do
+describe 'User sees all comments on job show page' do
   scenario 'a user can see all comments for a job' do
     category = Category.create!(title: 'Web Development')
     company = Company.create!(name: "ESPN")
