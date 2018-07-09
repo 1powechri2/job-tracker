@@ -45,6 +45,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov'
   gem 'tux'
+  gem 'bootstrap-sass', '~> 3.2.0'
+  gem 'autoprefixer-rails'
+
 end
 
 group :development do
