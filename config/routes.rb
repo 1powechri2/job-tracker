@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/jobs' => 'jobs#all_jobs'
+  get '/dashboard' => 'dashboard#index'
 
   resources :categories
 
