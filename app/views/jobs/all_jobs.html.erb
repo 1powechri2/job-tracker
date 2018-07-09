@@ -4,7 +4,8 @@
   <ul>
     <li><%=link_to job.title, company_job_path(job.company, job)%> at
         <%=link_to job.company.name, company_path(job.company)%> in
-        <%= job.city %>
+        <%= job.city %></br>
+        <%="Rating: #{job.level_of_interest}"%>
   </ul>
 <% end %>
 <p><%= link_to "See All Companies", companies_path%></p>
