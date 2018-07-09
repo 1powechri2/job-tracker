@@ -23,10 +23,10 @@ describe "User can visit /dashboard" do
     job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
     visit '/dashboard'
 
-    expect(page).to have_content("Jobs by Interest:")
-    expect(page).to have_content("***** (2)Jobs")
-    expect(page).to have_content("**** (1)Job")
-    expect(page).to have_content("** (1)Job")
+    expect(page).to have_content("Jobs by Interest")
+    expect(page).to have_content('5 Star Rating: (2) Job(s)')
+    expect(page).to have_content("4 Star Rating: (1) Job(s)")
+    expect(page).to have_content("2 Star Rating: (1) Job(s)")
   end
 
 
