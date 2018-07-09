@@ -53,11 +53,7 @@ describe Job do
         job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
         job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
 
-        expect(Job.amount_by_rating(5)).to eq(2)
-        expect(Job.amount_by_rating(4)).to eq(1)
-        expect(Job.amount_by_rating(3)).to eq(0)
-        expect(Job.amount_by_rating(2)).to eq(1)
-        expect(Job.amount_by_rating(1)).to eq(0)
+        expect(Job.group_by_interest).to eq({5=>2, 4=>1, 2=>1})
       end
     end
   end
