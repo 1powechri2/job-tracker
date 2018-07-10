@@ -5,6 +5,10 @@ class Job < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def self.group_by_interest
-    group('level_of_interest').order('level_of_interest desc').count
+    group('level_of_interest').order('level_of_interest desc').count.take(3)
+  end
+
+  def self.by_city_count
+    group(:city).count
   end
 end
