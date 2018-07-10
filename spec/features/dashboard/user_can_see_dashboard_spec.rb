@@ -21,7 +21,7 @@ describe "User can visit /dashboard" do
     job_2 = Job.create!(title: "Teacher", level_of_interest: 5, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
     job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
     job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
-    visit '/dashboard'
+    visit dashboard_path
 
     expect(page).to have_content("Jobs by Interest")
     expect(page).to have_content('5 Star Rating: (2) Job(s)')
