@@ -3,7 +3,15 @@ class Company < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_many :contacts, dependent: :destroy
 
-  def avg_interest
-    jobs.average('level_of_interest')
+  def self.top_three
+    select("companies.name, avg(jobs.level_of_interest) AS avg_of_interest")
+    .joins(:jobs)
+    .group(:name)
+    .order("avg_of_interest DESC")
+    .take(3)
   end
+
+  # def self.average_interest_per_company
+  #   Company.jobs
+  # end
 end

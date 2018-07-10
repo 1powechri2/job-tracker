@@ -4,3 +4,9 @@
 <% @group_by_interest.each do |interest_level, count| %>
 <p><%= "#{interest_level} Star Rating: (#{count}) Job(s)"  %></p>
 <% end %>
+
+<p>Top Companies By Interest</p>
+<% @top_three.each do |company| %>
+
+<p><%= company.name %> (<%= company.avg_of_interest %>)</p>
+<% end %>
