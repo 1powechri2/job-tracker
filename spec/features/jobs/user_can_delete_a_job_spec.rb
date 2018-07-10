@@ -6,7 +6,7 @@ describe 'User deletes a job' do
     company = Company.create!(name: "ESPN")
     job = Job.create!(title: "Developer", level_of_interest: 90, city: "Denver", company_id: company.id, category_id: category.id)
 
-    visit "/companies/#{company.id}/jobs/#{job.id}"
+    visit company_job_path(company, job)
 
     click_link('Delete')
 

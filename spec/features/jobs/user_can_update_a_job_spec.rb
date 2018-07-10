@@ -6,7 +6,7 @@ describe 'User updates a job' do
   company = Company.create!(name: "ESPN")
   job = Job.create!(title: "Developer", level_of_interest: 90, city: "Denver", company_id: company.id, category_id: category.id)
 
-    visit "/companies/#{company.id}/jobs/#{job.id}/edit"
+    visit edit_company_job_path(company, job)
 
     fill_in 'job[title]', with: 'DBA'
     fill_in 'job[level_of_interest]', with: 45
@@ -14,6 +14,7 @@ describe 'User updates a job' do
 
     click_on('Update')
 
+    expect(current_path).to eq(company_job_path(company, job))
     expect(page).to_not have_content("Developer")
     expect(page).to_not have_content("70")
 
