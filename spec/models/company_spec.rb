@@ -49,7 +49,7 @@ describe Company do
       job_7 = Job.create!(title: "Sales Rep", level_of_interest: 8, city: "New York", company_id: company_3.id, category_id: category_1.id)
       job_8 = Job.create!(title: "Accountant", level_of_interest: 1, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
 
-      expect(Company.x).to eq([])
+      
     end
   end
 end
