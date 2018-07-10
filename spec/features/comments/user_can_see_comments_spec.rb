@@ -10,7 +10,6 @@ describe 'User sees all comments on job show page' do
 
     visit company_job_path(company, job)
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs/#{job.id}")
     expect(page).to have_content(comment_1.content)
     expect(page).to have_content(comment_2.content)
   end
