@@ -5,20 +5,17 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :companies
-
   resources :companies do
     resources :jobs
   end
 
-  resources :jobs do
+  resources :jobs, shallow: true do
     resources :comments
   end
 
-  resources :companies do
+  resources :companies, shallow: true do
     resources :contacts
   end
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

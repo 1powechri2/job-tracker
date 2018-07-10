@@ -1,14 +1,10 @@
-<br>Title: <%= @job.title %>
-<br>
+<br>Title: <%= @job.title %></br>
 
-Description: <%= @job.description %>
-<br>
+Description: <%= @job.description %></br>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
+Level of Interest: <%= @job.level_of_interest %></br>
 
-City: <%= @job.city %>
-<br>
+City: <%= @job.city %></br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %> </br>
 
@@ -16,7 +12,7 @@ Category: <%= link_to @job.category.title, category_path(@job.category) %> </br>
 
 <p><%= link_to "Edit Job", edit_job_path(@job)%></p>
 
-<%= link_to "Delete Job", job_path(@job), method: :delete, data: {confirm: "Really delete the job?"} %>
+<p><%= link_to "Delete Job", job_path(@job), method: :delete, data: {confirm: "Really delete the job?"} %></p>
 
 <p><%= link_to "Back to #{@job.company.name}", company_path(@job.company)%></p>
 

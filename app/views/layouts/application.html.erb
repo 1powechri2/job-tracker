@@ -5,12 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
 </head>
+
+<nav>
+<p><%= link_to "See All Companies", companies_path%></p>
+<p><%= link_to "See All Categories", categories_path%></p>
+<p><%= link_to "See All Jobs", jobs_path%></p>
+<p><%= link_to "Dashboard", dashboard_path%></p>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Job Tracker</h1>
+    <p class="lead">The #1 tool for helping Turing School graduates organize job prospects.</p>
+  </div>
+</div>
+
 <body>
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>
   <% end %>
 <%= yield %>
-
 </body>
 </html>

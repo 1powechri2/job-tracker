@@ -6,11 +6,11 @@ describe 'User creates a new job' do
     company = Company.create!(name: 'ESPN')
     visit new_company_job_path(company)
 
-    fill_in 'job[title]', with: 'Accountant'
-    fill_in 'job[description]', with: 'Money stuff'
-    fill_in 'job[level_of_interest]', with: 7
-    fill_in 'job[city]', with: 'Denver'
-    select category.title, from: 'job[category_id]'
+    fill_in :job_title, with: 'Accountant'
+    fill_in :job_description, with: 'Money stuff'
+    fill_in :job_level_of_interest, with: 7
+    fill_in :job_city, with: 'Denver'
+    select category.title, from: :job_category_id
 
     click_on 'Create Job'
 

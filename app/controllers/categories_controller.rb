@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to category_path(@category)
+      redirect_to categories_path
     else
       flash[:alert] = "Sorry, that category already exists!"
       redirect_to new_category_path
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
     @category.update(category_params)
     if @category.save
       flash[:success] = "#{@category.title} updated!"
-      redirect_to category_path(@category)
+      redirect_to categories_path
     else
       render :edit
     end
