@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :companies
-
   resources :companies do
     resources :jobs
   end
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :companies do
+  resources :companies, shallow: true do
     resources :contacts
   end
 
