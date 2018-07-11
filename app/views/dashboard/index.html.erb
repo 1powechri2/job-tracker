@@ -10,19 +10,19 @@
   </div>
 </section>
 
-
-
-<p>Jobs by Interest</p>
+<p>Jobs by Interest<p>
 <% @group_by_interest.each do |interest_level, count| %>
-<p><%= "#{interest_level} Star Rating: (#{count}) Job(s)"  %></p>
+<p><%= "#{interest_level} Star Rating: (#{count}) Job(s)"%></p>
 <% end %>
-
-<p>Top Companies By Interest</p>
+</br>
+</br>
+<p>Top Three Companies by Interest</p>
 <% @top_three.each do |company| %>
-
 <p><%= company.name %> (<%= company.avg_of_interest %>)</p>
 <% end %>
-
+</br>
+</br>
+<p>Jobs by City</p>
 <% @city_count.each do |city, count| %>
-<%= link_to "#{city}", "/jobs?location=#{city}" %><%= "(#{count} jobs)"  %>
+<p><%= link_to "#{city}", "/jobs?location=#{city}" %><%= "(#{count} jobs)" %></p>
 <% end %>
