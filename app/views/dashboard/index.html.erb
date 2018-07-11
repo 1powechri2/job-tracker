@@ -10,3 +10,7 @@
 
 <p><%= company.name %> (<%= company.avg_of_interest %>)</p>
 <% end %>
+
+<% @city_count.each do |city, count| %>
+<p><%= link_to "#{city} (#{count} jobs)"  %></p>
+<% end %>
