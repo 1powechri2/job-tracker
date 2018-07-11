@@ -1,4 +1,15 @@
-<%= @category.title %>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @category.title %>
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+
 
 <% @category.jobs.each do |job| %>
   <ul><%= link_to "#{job.title}", job_path(job) %></ul>

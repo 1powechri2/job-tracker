@@ -1,15 +1,18 @@
-<h3>All Companies</h3>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        All Companies
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+
 
 <p><%= link_to "See All Categories", categories_path%></p>
 <p><%= link_to "See All Jobs", jobs_path%></p>
 
-<ul>
-  <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>:
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
-  </li>
-  <% end %>
-</ul>
+
 <p><%= link_to "Create New Company", new_company_path%></p>

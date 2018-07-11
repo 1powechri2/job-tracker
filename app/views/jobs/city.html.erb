@@ -1,4 +1,16 @@
-<h1><%= @jobs.first.city %> Jobs</h1>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @jobs.first.city %> Jobs
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+
+
 
 <% @jobs.each do |job| %>
   <ul>

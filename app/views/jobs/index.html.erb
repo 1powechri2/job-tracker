@@ -1,8 +1,19 @@
-All Jobs for <strong><%= @company.name %></strong>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        All Jobs for <strong><%= @company.name %></strong>
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
 
 <% @jobs.each do |job| %>
   <ul>
-    <li><%= job.title %> at <%= job.company.name %>
-    <%= link_to "Edit", edit_company_job_path(@company, job) %></li>
+    <li> <%= job.title %> at <%= job.company.name %>
+    <%= link_to "Edit", edit_company_job_path(@company, job) %> </li>
+    </div>
   </ul>
 <% end %>
