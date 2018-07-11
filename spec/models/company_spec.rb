@@ -28,7 +28,13 @@ describe Company do
       company = Company.new(name: "Dropbox")
       expect(company).to respond_to(:jobs)
     end
+
+    it "has many cont" do
+      company = Company.new(name: "Dropbox")
+      expect(company).to respond_to(:contacts)
+    end
   end
+
   # describe 'class methods' do
   #   # context 'it can find top three companies by jobs average level of interest' do
   #   #   it '.top three' do
