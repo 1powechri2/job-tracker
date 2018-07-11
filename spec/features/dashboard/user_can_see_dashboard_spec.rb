@@ -22,7 +22,7 @@ describe "User can visit /dashboard" do
     job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
     job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
     visit dashboard_path
-
+age.body.index('5 Star Rating: (2) Job(s)').should < page.body.index("4 Star Rating: (1) Job(s)")
     expect(page).to have_content("Jobs by Interest")
     expect(page).to have_content('5 Star Rating: (2) Job(s)')
     expect(page).to have_content("4 Star Rating: (1) Job(s)")
