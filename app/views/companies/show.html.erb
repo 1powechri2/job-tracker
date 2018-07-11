@@ -1,4 +1,16 @@
-<h1><%=@company.name%></h1>
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%=@company.name%>
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+
+
 
 <% if @company.jobs.count > 0 %>
     Jobs for <strong><%= @company.name %></strong>

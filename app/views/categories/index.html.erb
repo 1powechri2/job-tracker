@@ -1,14 +1,23 @@
-<h3>All Categories</h3>
-
-
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        All Categories
+      </h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+</br>
+  <p><%= link_to "Create New Category", new_category_path%></p>
+</br>
 <ul>
   <% @categories.each do |category| %>
   <li class=category_<%= category.id %>>
     <%= link_to category.title, category_path(category) %>
     <%= link_to "Edit", edit_category_path(category)%>
-    <%= link_to "Delete", category_path(category), method: "delete" %>
+    <%= link_to "Delete", category_path(category), method: "delete" %></br></br>
   </li>
   <% end %>
 </ul>
-
-<p><%= link_to "Create New Category", new_category_path%></p>
