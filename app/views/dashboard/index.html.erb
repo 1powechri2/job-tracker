@@ -12,5 +12,5 @@
 <% end %>
 
 <% @city_count.each do |city, count| %>
-<p><%= link_to "#{city} (#{count} jobs)"  %></p>
+<%= link_to "#{city}", "/jobs?location=#{city}" %><%= "(#{count} jobs)"  %>
 <% end %>
