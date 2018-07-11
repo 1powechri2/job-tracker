@@ -10,9 +10,10 @@
   </div>
 </section>
 
-
-<p><%= link_to "See All Categories", categories_path%></p>
-<p><%= link_to "See All Jobs", jobs_path%></p>
-
+<% @companies.each do |company| %>
+    <p><%=link_to company.name, company_path(company)%></p>
+<% end %>
+</br>
+</br>
 
 <p><%= link_to "Create New Company", new_company_path%></p>

@@ -11,7 +11,8 @@ cat_4 = Category.new(title: "Plumbing")
 cat_5 = Category.new(title: "Service")
 cat_6 = Category.new(title: "HR")
 cat_7 = Category.new(title: "Marketing")
-CATEGORIES = [cat_1, cat_2, cat_3, cat_4, cat_5, cat_6, cat_7]
+cat_8 = Category.new(title: "Purchasing")
+CATEGORIES = [cat_1, cat_2, cat_3, cat_4, cat_5, cat_6, cat_7, cat_8]
 
 COMPANIES.each do |name|
   company = Company.create!(name: name)

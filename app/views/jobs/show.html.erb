@@ -23,7 +23,7 @@ Category: <%= link_to @job.category.title, category_path(@job.category) %> </br>
 
 <%= link_to "Edit Job", edit_job_path(@job)%></br></br>
 
-<%= link_to "Delete Job", job_path(@job), method: :delete, data: {confirm: "Really delete the job?"} %></br></br>
+<%= link_to "Delete Job", jobs_path, method: :delete, data: {confirm: "Really delete the job?"} %></br></br>
 
 <%= link_to "Back to #{@job.company.name}", company_path(@job.company)%></br></br>
 
