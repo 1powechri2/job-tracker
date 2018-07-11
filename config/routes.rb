@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, shallow: true do
-    resources :comments
+    resources :comments, only: [:new, :create]
   end
 
   resources :companies, shallow: true do
-    resources :contacts
+    resources :contacts, only: [:new, :create]
   end
 
 

@@ -45,6 +45,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job = Job.find(params[:id])
+    require "pry"; binding.pry
     @company = @job.company
     @job.destroy
     redirect_to company_path(@company)
@@ -66,6 +67,4 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
   end
-
-
 end

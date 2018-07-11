@@ -5,8 +5,9 @@ describe "User deletes existing category" do
     category = Category.create(title: "Web Development")
 
     visit categories_path
-    click_link "Delete"
+    click_link('Delete')
 
+    expect(current_path).to eq(categories_path)
     expect(page).to_not have_content("Web Development")
   end
 end

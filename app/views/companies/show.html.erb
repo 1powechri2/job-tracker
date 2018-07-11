@@ -9,9 +9,6 @@
     </div>
   </div>
 </section>
-
-
-
 <% if @company.jobs.count > 0 %>
     Jobs for <strong><%= @company.name %></strong>
     <% @company.jobs.each do |job| %>
@@ -20,11 +17,14 @@
 <% else %>
     <h3>0 Jobs Listed</h3>
 <% end %>
-
+</br>
+</br>
+<p>Add Contact</p>
 <%= render partial: 'contacts/form' %>
-
-<h3> Existing Contacts </h3>
+</br>
+<h3><strong> Existing Contacts</strong> </h3>
 <%= render partial: 'companies/contact', collection: @company.contacts.reverse %>
 
+<p><%= link_to "Create A Category", new_category_path%></p>
 <p><%= link_to "Create A Job", new_company_job_path(@company)%></p>
-<p><%= link_to "See All Companies", companies_path%></p>
+<p><%= link_to "Delete Company: #{@company.name}", company_path(@company), method: :delete, data:{confirm: "Really delete the category?"} %></p></br></br>

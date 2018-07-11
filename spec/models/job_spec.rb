@@ -23,7 +23,12 @@ describe Job do
       it "is valid with a title, level of interest, and company" do
         company = Company.new(name: "Turing")
         category = Category.new(title: "Web Development")
-        job = Job.new(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+        job = Job.new(title: "Developer",
+                      level_of_interest: 40,
+                      city: "Denver",
+                      company: company,
+                      category: category
+                      )
         expect(job).to be_valid
       end
     end
@@ -34,6 +39,7 @@ describe Job do
       job = Job.new(title: "Software", level_of_interest: 70, description: "Wahooo")
       expect(job).to respond_to(:company)
       expect(job).to respond_to(:category)
+      expect(job).to respond_to(:comments)
     end
   end
 
@@ -48,10 +54,30 @@ describe Job do
         company_2 = Company.create!(name: "Turing")
         company_3 = Company.create!(name: "Macy's")
         company_4 = Company.create!(name: "Adidas")
-        job_1 = Job.create!(title: "Developer", level_of_interest: 4, city: "Denver", company_id: company_1.id, category_id: category_1.id)
-        job_2 = Job.create!(title: "Teacher", level_of_interest: 5, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
-        job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
-        job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
+        job_1 = Job.create!(title: "Developer",
+                            level_of_interest: 4,
+                            city: "Denver",
+                            company_id: company_1.id,
+                            category_id: category_1.id
+                            )
+        job_2 = Job.create!(title: "Teacher",
+                            level_of_interest: 5,
+                            city: "Boulder",
+                            company_id: company_2.id,
+                            category_id: category_2.id
+                            )
+        job_3 = Job.create!(title: "Sales Rep",
+                            level_of_interest: 2,
+                            city: "New York",
+                            company_id: company_3.id,
+                            category_id: category_1.id
+                            )
+        job_4 = Job.create!(title: "Accountant",
+                            level_of_interest: 5,
+                            city: "Seattle",
+                            company_id: company_4.id,
+                            category_id: category_4.id
+                            )
 
         expect(Job.group_by_interest).to eq({5=>2, 4=>1, 2=>1})
       end
@@ -66,10 +92,30 @@ describe Job do
         company_2 = Company.create!(name: "Turing")
         company_3 = Company.create!(name: "Macy's")
         company_4 = Company.create!(name: "Adidas")
-        job_1 = Job.create!(title: "Developer", level_of_interest: 4, city: "Denver", company_id: company_1.id, category_id: category_1.id)
-        job_2 = Job.create!(title: "Teacher", level_of_interest: 5, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
-        job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
-        job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
+          job_1 = Job.create!(title: "Developer",
+                              level_of_interest: 4,
+                              city: "Denver",
+                              company_id: company_1.id,
+                              category_id: category_1.id
+                              )
+          job_2 = Job.create!(title: "Teacher",
+                              level_of_interest: 5,
+                              city: "Boulder",
+                              company_id: company_2.id,
+                              category_id: category_2.id
+                              )
+          job_3 = Job.create!(title: "Sales Rep",
+                              level_of_interest: 2,
+                              city: "New York",
+                              company_id: company_3.id,
+                              category_id: category_1.id
+                              )
+          job_4 = Job.create!(title: "Accountant",
+                              level_of_interest: 5,
+                              city: "Seattle",
+                              company_id: company_4.id,
+                              category_id: category_4.id
+                              )
 
         expect(Job.by_city_count).to eq({"Seattle"=>1, "New York"=>1, "Boulder"=>1, "Denver"=>1})
       end
@@ -84,10 +130,30 @@ describe Job do
         company_2 = Company.create!(name: "Turing")
         company_3 = Company.create!(name: "Macy's")
         company_4 = Company.create!(name: "Adidas")
-        job_1 = Job.create!(title: "Developer", level_of_interest: 4, city: "Denver", company_id: company_1.id, category_id: category_1.id)
-        job_2 = Job.create!(title: "Teacher", level_of_interest: 5, city: "Boulder", company_id: company_2.id, category_id: category_2.id)
-        job_3 = Job.create!(title: "Sales Rep", level_of_interest: 2, city: "New York", company_id: company_3.id, category_id: category_1.id)
-        job_4 = Job.create!(title: "Accountant", level_of_interest: 5, city: "Seattle", company_id: company_4.id, category_id: category_4.id)
+          job_1 = Job.create!(title: "Developer",
+                              level_of_interest: 4,
+                              city: "Denver",
+                              company_id: company_1.id,
+                              category_id: category_1.id
+                              )
+          job_2 = Job.create!(title: "Teacher",
+                              level_of_interest: 5,
+                              city: "Boulder",
+                              company_id: company_2.id,
+                              category_id: category_2.id
+                              )
+          job_3 = Job.create!(title: "Sales Rep",
+                              level_of_interest: 2,
+                              city: "New York",
+                              company_id: company_3.id,
+                              category_id: category_1.id
+                              )
+          job_4 = Job.create!(title: "Accountant",
+                              level_of_interest: 5,
+                              city: "Seattle",
+                              company_id: company_4.id,
+                              category_id: category_4.id
+                              )
 
         expect(Job.cities_only).to eq(["Denver", "Boulder", "New York", "Seattle"])
       end
