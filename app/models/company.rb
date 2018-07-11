@@ -10,8 +10,4 @@ class Company < ApplicationRecord
     .order("avg_of_interest DESC")
     .take(3)
   end
-
-  # def self.average_interest_per_company
-  #   Company.jobs
-  # end
 end
