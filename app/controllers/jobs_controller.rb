@@ -6,10 +6,14 @@ class JobsController < ApplicationController
   end
 
   def all_jobs
+    @cities = Job.cities_only
     if params['sort'] == 'location'
       @jobs = Job.all.order(city: :asc)
     elsif params['sort'] == 'interest'
       @jobs = Job.all.order(level_of_interest: :desc)
+    elsif @cities.include?(params['location'])
+      @jobs = Job.all.where(city: params['location'])
+      render :city
     else
       @jobs = Job.all
     end
